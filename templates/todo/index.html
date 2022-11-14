@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>TODO list</h1>
+  <h1>
+    TODO list
+    <a href="{% url 'todo:task-crate' %}" class="btn btn-primary link-to-page">
+      Add task
+    </a>
+  </h1>
 
 {% endblock %}

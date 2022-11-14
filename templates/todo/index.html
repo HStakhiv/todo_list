@@ -2,7 +2,7 @@
 
 {% block content %}
 
-  <h1 class="mb-5">
+  <h1 class="mb-5 font-weight-bold">
     TODO list
     <a href="{% url 'todo:task-crate' %}" class="btn btn-primary link-to-page">
       Add task
@@ -32,8 +32,8 @@
         <span style="color: grey">
           Tags: {{ task.tags.all|join:" " }}
         </span>
-        <a href="{% url 'todo:toggle' pk=task.id %}">Update</a>
-        <a style="color: red" href="{% url 'todo:toggle' pk=task.id %}">Delete</a>
+        <a href="{% url 'todo:task-update' pk=task.id %}">Update</a>
+        <a style="color: red" href="{% url 'todo:task-delete' pk=task.id %}">Delete</a>
       </p>
 
       <hr>

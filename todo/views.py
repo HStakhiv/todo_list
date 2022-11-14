@@ -42,12 +42,7 @@ class TagDeleteView(generic.DeleteView):
 
 def toggle_for_tasks(request, pk):
     task = Task.objects.get(pk=pk)
-
-    if task.status:
-        task.status = False
-    else:
-        task.status = True
-
+    task.status = not task.status
     task.save()
 
     return HttpResponseRedirect(reverse_lazy("todo:index"))

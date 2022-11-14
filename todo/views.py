@@ -6,14 +6,10 @@ from .forms import TaskForm
 from .models import Tag, Task
 
 
-def index(request):
-    task = Task.objects.all()
-
-    context = {
-        "task": task,
-    }
-
-    return render(request, "todo/index.html", context)
+class TaskListView(generic.ListView):
+    model = Task
+    context_object_name = "index"
+    template_name = "todo/index.html"
 
 
 class TaskCreateView(generic.CreateView):

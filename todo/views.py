@@ -8,7 +8,6 @@ from .models import Tag, Task
 
 class TaskListView(generic.ListView):
     model = Task
-    context_object_name = "index"
     template_name = "todo/index.html"
 
 

@@ -48,4 +48,6 @@ def toggle_for_tasks(request, pk):
     else:
         task.status = True
 
+    task.save()
+
     return HttpResponseRedirect(reverse_lazy("todo:index"))

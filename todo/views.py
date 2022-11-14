@@ -30,7 +30,6 @@ class TaskDeleteView(generic.DeleteView):
 
 class TagListView(generic.ListView):
     model = Tag
-    paginate_by = 5
     queryset = Tag.objects.all()
 
 
